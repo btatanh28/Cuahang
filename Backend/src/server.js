@@ -9,6 +9,10 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'https://your-frontend.onrender.com'
+}));
+
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
 
